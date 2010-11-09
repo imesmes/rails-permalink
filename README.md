@@ -1,5 +1,5 @@
 Permalink
-====================
+=========
 
 This plugin will create permalink for the provided attributes.
 
