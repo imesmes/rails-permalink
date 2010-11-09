@@ -1,8 +1,7 @@
-Simplified Permalink
+Permalink
 ====================
 
-I know there are some plugins out there that do the same, but this one 
-fits my needs.
+This plugin will create permalink for the provided attributes.
 
 Example
 -------
