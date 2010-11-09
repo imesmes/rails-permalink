@@ -3,6 +3,15 @@ Permalink
 
 This plugin will create permalink for the provided attributes.
 
+
+Installing
+----------
+
+Add it to your `Gemfile`:
+
+    gem 'permalink', :git => 'https://github.com/fesplugas/rails-permalink.git'
+
+
 Example
 -------
 
