@@ -46,32 +46,32 @@ class SimplifiedPermalinkTest < Test::Unit::TestCase
   end
 
   def test_should_convert_page_name
-    post = Page.create :name => "Chunky Bacon"
+    post = Page.create(:name => "Chunky Bacon")
     assert_equal "chunky-bacon", post.permalink
   end
 
   def test_should_convert_page_name_when_permalink_is_blank
-    post = Page.create :name => "Chunky Bacon", :permalink => ""
+    post = Page.create(:name => "Chunky Bacon", :permalink => "")
     assert_equal "chunky-bacon", post.permalink
   end
 
   def test_should_not_convert_page_name_when_permalink_is_present
-    post = Page.create :name => "Chunky Bacon", :permalink => "bacon"
+    post = Page.create(:name => "Chunky Bacon", :permalink => "bacon")
     assert_equal "bacon", post.permalink
   end
 
   def test_should_convert_post_title_to_slug
-    post = Post.create :title => "Chunky Bacon"
+    post = Post.create(:title => "Chunky Bacon")
     assert_equal "chunky-bacon", post.slug
   end
 
   def test_should_convert_post_title_to_slug_when_slug_is_blank
-    post = Post.create :title => "Chunky Bacon", :slug => ""
+    post = Post.create(:title => "Chunky Bacon", :slug => "")
     assert_equal "chunky-bacon", post.slug
   end
 
   def test_should_not_convert_post_title_when_slug_is_present
-    post = Post.create :title => "Chunky Bacon", :slug => "bacon"
+    post = Post.create(:title => "Chunky Bacon", :slug => "bacon")
     assert_equal "bacon", post.slug
   end
 
