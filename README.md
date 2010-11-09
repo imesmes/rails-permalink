@@ -1,17 +1,18 @@
-= Simplified Permalink
+Simplified Permalink
+====================
 
 I know there are some plugins out there that do the same, but this one 
 fits my needs.
 
-== Example
+Example
+-------
 
 Add to your posts the permalink attribute.
 
     add_column :posts, :permalink, :null => false
-    add_index :posts, :permalink
+    add_index :posts, :permalink, :unique => true
 
 And use it on your controllers.
-
 
     class Post < ActiveRecord::Base
       permalink :title
@@ -30,11 +31,5 @@ So now you can find your posts with:
       end
 
     end
-
-== About the Author
-
-Francesc Esplugas <hello@francescesplugas.com>
-
-You can recommend me at http://workingwithrails.com/person/5061-francesc-esplugas
 
 Copyright (c) 2008-2010 Francesc Esplugas Marti, released under the MIT license
