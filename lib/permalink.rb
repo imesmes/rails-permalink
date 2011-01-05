@@ -24,6 +24,10 @@ module Permalink
           record.send "#{permalink_field_name}=", record.send(field_name).parameterize
         end
       end
+
+      define_method "to_param" do
+        send(permalink_field_name)
+      end
     end
   end
 

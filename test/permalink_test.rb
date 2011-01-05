@@ -50,6 +50,11 @@ class SimplifiedPermalinkTest < Test::Unit::TestCase
     assert_equal "chunky-bacon", post.permalink
   end
 
+  def test_should_return_to_param
+    post = Page.create(:name => "Chunky Bacon")
+    assert_equal "chunky-bacon", post.to_param
+  end
+
   def test_should_convert_page_name_when_permalink_is_blank
     post = Page.create(:name => "Chunky Bacon", :permalink => "")
     assert_equal "chunky-bacon", post.permalink
@@ -63,6 +68,11 @@ class SimplifiedPermalinkTest < Test::Unit::TestCase
   def test_should_convert_post_title_to_slug
     post = Post.create(:title => "Chunky Bacon")
     assert_equal "chunky-bacon", post.slug
+  end
+
+  def test_should_return_to_param_with_custom_permalink_field_name
+    post = Post.create(:title => "Chunky Bacon")
+    assert_equal "chunky-bacon", post.to_param
   end
 
   def test_should_convert_post_title_to_slug_when_slug_is_blank
