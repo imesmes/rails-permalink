@@ -25,6 +25,12 @@ module Permalink
         end
       end
 
+      before_update do |record|
+        if record.send("#{field_name}_changed?")
+          record.send "#{permalink_field_name}=", record.send(field_name).parameterize
+        end
+      end
+
       define_method "to_param" do
         send(permalink_field_name)
       end
