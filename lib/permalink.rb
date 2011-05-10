@@ -31,9 +31,9 @@ module Permalink
         end
       end
 
-      define_method "to_param" do
-        send(permalink_field_name)
-      end
+      #define_method "to_param" do
+      #  send(permalink_field_name)
+      #end
     end
   end
 
