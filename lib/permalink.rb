@@ -19,6 +19,10 @@ module Permalink
     #   end
     #
     def permalink(field_name, permalink_field_name = 'permalink')
+      # Force default locale
+      locale = I18n.locale
+      I18n.locale = I18n.default_locale
+
       before_save do |record|
         if (record.send(permalink_field_name).blank?) || (record.send(field_name) && record.send(permalink_field_name).nil?)
           record.send "#{permalink_field_name}=", record.send(field_name).parameterize
@@ -34,6 +38,9 @@ module Permalink
       #define_method "to_param" do
       #  send(permalink_field_name)
       #end
+
+      # Restore locale
+      I18n.locale = locale
     end
   end
 
